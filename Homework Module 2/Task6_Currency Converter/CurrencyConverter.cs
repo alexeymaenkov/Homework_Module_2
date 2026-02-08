@@ -4,22 +4,7 @@ namespace Homework_Module_2.Task6_Currency_Converter;
 public class CurrencyConverter
 {
     public void Run()
-    { 
-        /*Написать конвертер валют (3 валюты).
-
-        У пользователя есть баланс в каждой из представленных валют.
-        Он может попросить сконвертировать часть баланса с одной валюты в другую.
-        Тогда у него с баланса одной валюты снимется X и зачислится на баланс другой Y.
-        Курс конвертации должен быть просто прописан в программе.
-
-           По имени переменной курса конвертации должно быть понятно, из какой валюты в какую валюту конвертируется.
-           В консольном меню будет 6 команд конвертации, на каждый обмен. И для каждого обмена своя переменная с коэффициентом обмена.
-           Валюта не может быть отрицательной и это стоит учитывать.
-           Программа должна завершиться тогда, когда это решит пользователь.
-
-        В каждом кейсе должна быть одна операция. Либо деление, либо умножение. То есть, одна строка.
-        Все остальные действия должны происходить за пределами свитча.** */
-        
+    {
         const string CONVERT_RUB_TO_USD = "1";
         const string CONVERT_USD_TO_RUB = "2";
         const string CONVERT_RUB_TO_EUR = "3";
@@ -32,20 +17,23 @@ public class CurrencyConverter
         float rubInWallet, usdInWallet, eurInWallet;
         float exchangeCurrencyCount;
         
+        bool isWork = true;
+        
         Console.Write("Введите баланс RUB: ");
         rubInWallet = Convert.ToSingle(Console.ReadLine());
+        
         Console.Write("Введите баланс USD: ");
         usdInWallet = Convert.ToSingle(Console.ReadLine());
+        
         Console.Write("Введите баланс EUR: ");
         eurInWallet = Convert.ToSingle(Console.ReadLine());
         
         StringBuilder userInput = new ();
-        
-        bool isWork = true;
 
         while (isWork)
         {
             Console.Clear();
+            
             Console.WriteLine("Конвертер валют");
             Console.WriteLine($"Ваш баланс: RUB:{rubInWallet} | USD:{usdInWallet} | EUR:{eurInWallet}");
             Console.WriteLine($"Курс обмена валют:\nRUB->USD:{rubToUsd} | USD->RUB:{usdToRub}\nRUB->EUR:{rubToEur} | EUR->RUB:{eurToRub}\nUSD->EUR:{usdToEur} | EUR->USD:{eurToUsd}");
@@ -78,6 +66,7 @@ public class CurrencyConverter
                         Console.WriteLine("У вас не достаточно денег.");
                     }
                     break;
+                
                 case CONVERT_USD_TO_RUB:
                     Console.Write("Сколько Долларов вы хотите обменять:");
                     exchangeCurrencyCount = Convert.ToSingle(Console.ReadLine());
@@ -92,6 +81,7 @@ public class CurrencyConverter
                         Console.WriteLine("У вас не достаточно денег.");
                     }
                     break;
+                
                 case CONVERT_RUB_TO_EUR:
                     Console.Write("Сколько Рублей вы хотите обменять:");
                     exchangeCurrencyCount = Convert.ToSingle(Console.ReadLine());
@@ -106,6 +96,7 @@ public class CurrencyConverter
                         Console.WriteLine("У вас не достаточно денег.");
                     }
                     break;
+                
                 case CONVERT_EUR_TO_RUB:
                     Console.Write("Сколько Евро вы хотите обменять:");
                     exchangeCurrencyCount = Convert.ToSingle(Console.ReadLine());
@@ -120,6 +111,7 @@ public class CurrencyConverter
                         Console.WriteLine("У вас не достаточно денег.");
                     }
                     break;
+                
                 case CONVERT_USD_TO_EUR:
                     Console.Write("Сколько Долларов вы хотите обменять:");
                     exchangeCurrencyCount = Convert.ToSingle(Console.ReadLine());
@@ -134,6 +126,7 @@ public class CurrencyConverter
                         Console.WriteLine("У вас не достаточно денег.");
                     }
                     break;
+                
                 case CONVERT_EUR_TO_USD:
                     Console.Write("Сколько Евро вы хотите обменять:");
                     exchangeCurrencyCount = Convert.ToSingle(Console.ReadLine());
@@ -148,14 +141,17 @@ public class CurrencyConverter
                         Console.WriteLine("У вас не достаточно денег.");
                     }
                     break;
+                
                 case EXIT:
                     isWork = false;
                     Console.Clear();
                     break;
+                
                 default:
                     Console.WriteLine("Неверный ввод номера операции! Попробуйте снова.");
                     break;
             }
+            
             if (isWork)
             {
                 Console.Write("Для продолжения обмена нажмите любую клавишу: ");

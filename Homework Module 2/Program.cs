@@ -15,39 +15,40 @@ namespace  Homework_Module_2
     class Program
     {
         static void Main(string[] args)
-        {
-            //Cycles cycle = new ();
-            //cycle.Run();
+        {/*
+            Cycles cycle = new ();
+            cycle.Run();
             
-            //ExitControl exit = new ();
-            //exit.Run();
+            ExitControl exit = new ();
+            exit.Run();
             
-            //Sequence sequence = new ();
-            //sequence.Run();
+            Sequence sequence = new ();
+            sequence.Run();
             
-            //Sum sum = new ();
-            //sum.Run();
+            Sum sum = new ();
+            sum.Run();
             
-            //ConsoleMenu console = new ();
-            //console.Run(); 
+            ConsoleMenu console = new ();
+            console.Run(); 
             
-            //CurrencyConverter currencyConverter = new ();
-            //currencyConverter.Run();
+            CurrencyConverter currencyConverter = new ();
+            currencyConverter.Run();
             
-            //NameOutput nameOutput = new ();
-            //nameOutput.Run();
+            NameOutput nameOutput = new ();
+            nameOutput.Run();
             
-            //PasswordProtected passwordProtected = new ();
-            //passwordProtected.Run();
+            PasswordProtected passwordProtected = new ();
+            passwordProtected.Run();
             
-            //Multiples multiples = new ();
-            //multiples.Run();
+            Multiples multiples = new ();
+            multiples.Run();
             
-            //PowerOfTwo powerOfTwo = new ();
-            //powerOfTwo.Run();
-            
+            PowerOfTwo powerOfTwo = new ();
+            powerOfTwo.Run();
+            */
             BossFight bossFight = new ();
             bossFight.Run();
+            
         }
     }
 }

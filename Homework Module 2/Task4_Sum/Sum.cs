@@ -4,18 +4,12 @@ public class Sum
 {
     public void Run()
     {
-        //С помощью Random получить число number, которое не больше 100.
-        //Найти сумму всех положительных чисел меньше number (включая число),
-        //которые кратные 3 или 5. (К примеру, это числа 3, 5, 6, 9, 10, 12, 15 и т.д.)
-
         const int MULTIPLES_1 = 3;
         const int MULTIPLES_2 = 5;
-
         
         Random random = new();
         
         int number = random.Next(0, 101);
-
         int sum = number;
         
         Console.WriteLine($"Случайное число от 0 до 100: {number}");
@@ -27,7 +21,6 @@ public class Sum
                 sum += i;
             }
         }
-
         Console.WriteLine($"Сумма всех положительных чисел меньше {number} (включая {number}), " +
                           $"которые кратны {MULTIPLES_1} или {MULTIPLES_2} равна: {sum}");
     }
