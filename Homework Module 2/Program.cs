@@ -16,8 +16,8 @@ namespace  Homework_Module_2
     {
         static void Main(string[] args)
         {
-            Cycles cycle = new ();
-            cycle.Run();
+            //Cycles cycle = new ();
+            //cycle.Run();
             
             //ExitControl exit = new ();
             //exit.Run();
@@ -46,8 +46,8 @@ namespace  Homework_Module_2
             //PowerOfTwo powerOfTwo = new ();
             //powerOfTwo.Run();
             
-            //BossFight bossFight = new ();
-            //bossFight.Run();
+            BossFight bossFight = new ();
+            bossFight.Run();
         }
     }
 }
