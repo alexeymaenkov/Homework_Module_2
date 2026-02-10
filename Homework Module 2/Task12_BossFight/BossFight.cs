@@ -33,8 +33,8 @@ public class BossFight
         
         bool wasFireballUsed = false;
         
-        StringBuilder userInput = new ();
-
+        string userInput;
+            
         while (bossLife > 0 && heroLife > 0)
         {
             Console.Clear();
@@ -47,10 +47,9 @@ public class BossFight
             Console.WriteLine($"{HEALING} - Лечение. Восстанавливает здоровье на {healingLifePoints}, и ману на {healingManaPoints}. Осталось {healingQuantity} аптечек.");
             
             Console.Write("Введите номер умения: ");
-            userInput.Clear();
-            userInput.Append(Console.ReadLine());
+            userInput = Console.ReadLine();
 
-            switch (userInput.ToString())
+            switch (userInput)
             {
                 case REG_DAMAGE:
                     wasFireballUsed = false;
@@ -92,14 +91,17 @@ public class BossFight
                         healingQuantity--;
                         heroLife += healingLifePoints;
                         heroMana += healingManaPoints;
+                        
                         if (heroLife > maxHeroLife)
                         {
                             heroLife = maxHeroLife;
                         }
+                        
                         if (heroMana > maxHeroMana)
                         {
                             heroMana = maxHeroMana;
                         }
+                        
                         Console.WriteLine($"Вы излечились: Жизни:{heroLife}, Мана:{heroMana}.");
                     }
                     else
@@ -120,10 +122,12 @@ public class BossFight
                 bossDamage = random.Next(bossMinDamage, bossMaxDamage);
                 heroLife -= bossDamage;
                 Console.WriteLine($"BOSS нанес вам {bossDamage} урона!");
+                
                 if (heroLife <= 0)
                 {
                     Console.WriteLine("ВЫ ПРОИГРАЛИ!");
                 }
+                
                 Console.Write("Нажмите любую клавишу для продолжения: ");
                 Console.ReadKey();
             }

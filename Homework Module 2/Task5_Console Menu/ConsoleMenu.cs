@@ -1,4 +1,3 @@
-using System.Text;
 namespace Homework_Module_2.Task5_Console_Menu;
 
 public class ConsoleMenu
@@ -7,53 +6,52 @@ public class ConsoleMenu
     {
         const int START_RAND = 0;
         const int FINISH_RAND = 100;
-        const string COMMAND_SHOW_TEXT1 = "1";
-        const string COMMAND_HIDE_TEXT2 = "2";
-        const string RAND_NUMBER = "3";
-        const string CONSOLE_CLEAR = "4";
-        const string EXIT = "5";
+        const string COMMAND_SHOW_TEXT_HELLO = "1";
+        const string COMMAND_SHOW_TEXT_NAME = "2";
+        const string COMMAND_RAND_NUMBER = "3";
+        const string COMMAND_CONSOLE_CLEAR = "4";
+        const string COMMAND_EXIT = "5";
 
         Random random = new Random();
         
         bool isWork = true;
-        
-        StringBuilder userInput = new ();
+
+        string userInput;
 
         while (isWork)
         {
             Console.Clear();
             
             Console.WriteLine("Добро пожаловать в программу!\nМеню:");
-            Console.WriteLine($"{COMMAND_SHOW_TEXT1} - Вывод текста 1.");
-            Console.WriteLine($"{COMMAND_HIDE_TEXT2} - Вывод текста 2.");
-            Console.WriteLine($"{RAND_NUMBER} - Показать случайное число.");
-            Console.WriteLine($"{CONSOLE_CLEAR} - Очистить консоль.");
-            Console.WriteLine($"{EXIT} - Выход.");
+            Console.WriteLine($"{COMMAND_SHOW_TEXT_HELLO} - Вывод приветствия");
+            Console.WriteLine($"{COMMAND_SHOW_TEXT_NAME} - Вывод Имени");
+            Console.WriteLine($"{COMMAND_RAND_NUMBER} - Показать случайное число.");
+            Console.WriteLine($"{COMMAND_CONSOLE_CLEAR} - Очистить консоль.");
+            Console.WriteLine($"{COMMAND_EXIT} - Выход.");
             
             Console.Write("Введите номер команды: ");
-            userInput.Clear();
-            userInput.Append(Console.ReadLine());
+            userInput = Console.ReadLine();
         
-            switch (userInput.ToString())
+            switch (userInput)
             {
-                case COMMAND_SHOW_TEXT1:
-                    Console.WriteLine("text 1");
+                case COMMAND_SHOW_TEXT_HELLO:
+                    Console.WriteLine("Hello!");
                     break;
                 
-                case COMMAND_HIDE_TEXT2:
-                    Console.WriteLine("text 2");
+                case COMMAND_SHOW_TEXT_NAME:
+                    Console.WriteLine("Alex");
                     break;
                 
-                case RAND_NUMBER:
+                case COMMAND_RAND_NUMBER:
                     int randomNumber = random.Next(START_RAND, FINISH_RAND);
                     Console.WriteLine($"Случайное число от {START_RAND} до {FINISH_RAND} равно: {randomNumber}.");
                     break;
                 
-                case CONSOLE_CLEAR:
+                case COMMAND_CONSOLE_CLEAR:
                     Console.Clear();
                     break;
                 
-                case EXIT:
+                case COMMAND_EXIT:
                     isWork = false;
                     Console.Clear();
                     break;
@@ -63,11 +61,8 @@ public class ConsoleMenu
                     break;
             }
             
-            if (isWork)
-            {
-                Console.Write("Нажмите любую клавишу для продолжения: ");
-                Console.ReadKey();
-            }
+            Console.Write("Нажмите любую клавишу для продолжения: ");
+            Console.ReadKey();
         }
     }
 }

@@ -42,13 +42,13 @@ namespace  Homework_Module_2
             
             Multiples multiples = new ();
             multiples.Run();
-            
+            */
             PowerOfTwo powerOfTwo = new ();
             powerOfTwo.Run();
-            */
+            /*
             BossFight bossFight = new ();
             bossFight.Run();
-            
+            */
         }
     }
 }

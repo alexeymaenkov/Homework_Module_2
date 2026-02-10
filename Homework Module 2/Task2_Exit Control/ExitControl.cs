@@ -1,27 +1,24 @@
-using System.Text;
-
 namespace Homework_Module_2.Task2_Exit_Control;
 
 public class ExitControl
 {
     public void Run()
     {
-        int i = 0;
+        int countTries = 0;
 
         bool rerun = true;
         
-        StringBuilder userInput = new ();
-
+        string userInput = "enter";
+        /*
         while (rerun)
         {
-            Console.WriteLine(i);
-            i++;
+            Console.WriteLine(countTries);
+            countTries++;
             
             Console.Write("Продолжить? (enter/exit): ");
-            userInput.Clear();
-            userInput.Append(Console.ReadLine());
+            userInput = Console.ReadLine();
             
-            switch (userInput.ToString())
+            switch (userInput)
             {
                 case "exit":
                     rerun = false;
@@ -30,6 +27,42 @@ public class ExitControl
                     Console.Clear();
                     continue;
             }
+        }
+        */
+        
+        /*
+        while (rerun)
+        {
+            Console.WriteLine(countTries);
+            
+            Console.Write("Продолжить? (enter/exit): ");
+            userInput = Console.ReadLine();
+            
+            if (userInput == "exit")
+            {
+                rerun = false;
+            }
+            else if (userInput == "enter")
+            {
+                countTries++;
+                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("Неверный ввод! Попробуйте снова.");
+            }
+        }
+        */
+
+        while (userInput != "exit")
+        {
+            Console.Clear();
+            
+            countTries++;
+            Console.WriteLine(countTries);
+            
+            Console.Write("Продолжить? (enter/exit): ");
+            userInput = Console.ReadLine();
         }
     }
 }

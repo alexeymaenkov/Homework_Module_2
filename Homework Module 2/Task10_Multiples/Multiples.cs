@@ -5,8 +5,10 @@ public class Multiples
     public void Run()
     {
         Random random = new();
-        
-        int n = random.Next(10, 26);
+
+        int minN = 10;
+        int maxN = 26;
+        int n = random.Next(minN, maxN);
         int firstOfRange = 50;
         int lastOfRange = 150;
         int count = 0;
