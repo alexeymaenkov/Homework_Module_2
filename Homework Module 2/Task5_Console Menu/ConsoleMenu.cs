@@ -6,6 +6,7 @@ public class ConsoleMenu
     {
         const int START_RAND = 0;
         const int FINISH_RAND = 100;
+        
         const string COMMAND_SHOW_TEXT_HELLO = "1";
         const string COMMAND_SHOW_TEXT_NAME = "2";
         const string COMMAND_RAND_NUMBER = "3";

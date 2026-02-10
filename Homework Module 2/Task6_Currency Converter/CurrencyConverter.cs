@@ -11,6 +11,7 @@ public class CurrencyConverter
         const string COMMAND_CONVERT_USD_TO_EUR = "5";
         const string COMMAND_CONVERT_EUR_TO_USD = "6";
         const string COMMAND_EXIT = "7";
+        
         const float RUB_TO_USD = 77.04f;
         const float USD_TO_RUB = 72.5f;
         const float RUB_TO_EUR = 91.3f;
@@ -30,8 +31,6 @@ public class CurrencyConverter
         
         Console.Write("Введите баланс EUR: ");
         float eurInWallet = Convert.ToSingle(Console.ReadLine());
-        
-        string userInput;
 
         while (isWork)
         {
@@ -50,7 +49,7 @@ public class CurrencyConverter
             Console.WriteLine($"{COMMAND_EXIT} - Выход");
             
             Console.Write("Введите номер операции: ");
-            userInput = Console.ReadLine();
+            string userInput = Console.ReadLine();
         
             switch (userInput)
             {

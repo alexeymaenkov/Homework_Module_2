@@ -7,10 +7,10 @@ public class BossFight
     {
         Random random = new();
 
-        const string REG_DAMAGE = "1";
-        const string FIREBALL = "2";
-        const string EXPLOSION = "3";
-        const string HEALING = "4";
+        const string COMMAND_REG_DAMAGE = "1";
+        const string COMMAND_FIREBALL = "2";
+        const string COMMAND_EXPLOSION = "3";
+        const string COMMAND_HEALING = "4";
         
         int bossLife = 500;
         int bossDamage;
@@ -32,8 +32,6 @@ public class BossFight
         int healingManaPoints = 10;
         
         bool wasFireballUsed = false;
-        
-        string userInput;
             
         while (bossLife > 0 && heroLife > 0)
         {
@@ -41,24 +39,24 @@ public class BossFight
             
             Console.WriteLine($"HERO: Жизни:{heroLife} | Мана:{heroMana}\nBOSS: Жизни:{bossLife}");
             Console.WriteLine("Ваш ход! Доступные умения:");
-            Console.WriteLine($"{REG_DAMAGE} - Обычная атака");
-            Console.WriteLine($"{FIREBALL} - Огненный шар: урон = {heroFireballDamage}, (тратит {fireballCoast} едениц маны)");
-            Console.WriteLine($"{EXPLOSION} - Взрыв: урон = {heroExplosionDamage}. Можно вызывать, только если был использован огненный шар.");
-            Console.WriteLine($"{HEALING} - Лечение. Восстанавливает здоровье на {healingLifePoints}, и ману на {healingManaPoints}. Осталось {healingQuantity} аптечек.");
+            Console.WriteLine($"{COMMAND_REG_DAMAGE} - Обычная атака");
+            Console.WriteLine($"{COMMAND_FIREBALL} - Огненный шар: урон = {heroFireballDamage}, (тратит {fireballCoast} едениц маны)");
+            Console.WriteLine($"{COMMAND_EXPLOSION} - Взрыв: урон = {heroExplosionDamage}. Можно вызывать, только если был использован огненный шар.");
+            Console.WriteLine($"{COMMAND_HEALING} - Лечение. Восстанавливает здоровье на {healingLifePoints}, и ману на {healingManaPoints}. Осталось {healingQuantity} аптечек.");
             
             Console.Write("Введите номер умения: ");
-            userInput = Console.ReadLine();
+            string userInput = Console.ReadLine();
 
             switch (userInput)
             {
-                case REG_DAMAGE:
+                case COMMAND_REG_DAMAGE:
                     wasFireballUsed = false;
                     heroRegularDamage = random.Next(heroMinDamage, heroMaxDamage);
                     bossLife -= heroRegularDamage;
                     Console.WriteLine($"Вы нанесли BOSS {heroRegularDamage} урона!");
                     break;
                 
-                case FIREBALL:
+                case COMMAND_FIREBALL:
                     if (heroMana >= fireballCoast)
                     {
                         wasFireballUsed = true;
@@ -72,7 +70,7 @@ public class BossFight
                     }
                     break;
                 
-                case EXPLOSION:
+                case COMMAND_EXPLOSION:
                     if (wasFireballUsed)
                     {
                         bossLife -= heroExplosionDamage;
@@ -85,7 +83,7 @@ public class BossFight
                     wasFireballUsed = false;
                     break;
                 
-                case HEALING:
+                case COMMAND_HEALING:
                     if (healingQuantity > 0)
                     {
                         healingQuantity--;
