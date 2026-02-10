@@ -9,7 +9,9 @@ public class ExitControl
         bool rerun = true;
         
         string userInput = "enter";
-        /*
+        
+        /* ---------------БЫЛО-------------
+         
         while (rerun)
         {
             Console.WriteLine(countTries);
@@ -30,7 +32,8 @@ public class ExitControl
         }
         */
         
-        /*
+        /* ---------------ВАРИАНТ 1-------------
+         
         while (rerun)
         {
             Console.WriteLine(countTries);
@@ -53,7 +56,9 @@ public class ExitControl
             }
         }
         */
-
+        
+        //---------------ВАРИАНТ 2-------------
+        
         while (userInput != "exit")
         {
             Console.Clear();

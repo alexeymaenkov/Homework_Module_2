@@ -12,16 +12,7 @@ public class PowerOfTwo
         int numberTwo = 2;
         int power = 2;
         int powCount = 1;
-        /*
-        while (randomNumber >= numberTwo)
-        {
-            numberTwo *= power;
-            if (randomNumber >= numberTwo)
-            { 
-                powCount++;
-            }
-        }*/
-
+        
         for (int i = numberTwo; i <= randomNumber; i *= power)
         {
             numberTwo *= power;
